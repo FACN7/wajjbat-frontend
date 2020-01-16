@@ -18,7 +18,7 @@ export default function BusinessPage(props) {
     useEffect(() => {
         (async function getImages() {
             const { data } = await axios.get(
-                `${process.env.REACT_APP_API_URL }/api/businesses/${ props.match.params.id}`,
+                `${process.env.REACT_APP_API_URL }/api/businesses/${props.match.params.id}`,
             );
             setReveiws(data.reviews);
             setBusinessData(data)
@@ -33,11 +33,11 @@ export default function BusinessPage(props) {
         <div style={{ minHeight: '100vh' }}>
             {businessData.primaryImage
         && (
-<BusinessPageImageGallery
-            defaultMainImage={businessData.primaryImage}
-            defaultSubImages={[...businessData.subImages, businessData.primaryImage]}
-        />
-)}
+            <BusinessPageImageGallery
+                defaultMainImage={businessData.primaryImage}
+                defaultSubImages={[...businessData.subImages.map(({ url }) => url), businessData.primaryImage]}
+            />
+        )}
 
 
             <nav className="business-page-nav">

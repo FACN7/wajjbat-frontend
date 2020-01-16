@@ -24,6 +24,7 @@ function InitialGoogleMaps({ userPosition, google }) {
                         lat: userPosition.lat,
                         lng: userPosition.lng,
                     }}
+
                 >
                     {/* optional in case we want to mark the position of the business */}
                     <Marker
@@ -38,4 +39,6 @@ function InitialGoogleMaps({ userPosition, google }) {
     );
 }
 
-export default GoogleApiWrapper({})(InitialGoogleMaps);
+export default GoogleApiWrapper({
+    apiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY,
+})(InitialGoogleMaps);
