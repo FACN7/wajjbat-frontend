@@ -38,4 +38,6 @@ function GoogleMaps({ userPosition, businessLocation, google }) {
     );
 }
 
-export default GoogleApiWrapper({})(GoogleMaps);
+export default GoogleApiWrapper({
+    apiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY,
+})(GoogleMaps);

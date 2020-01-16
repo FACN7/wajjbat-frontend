@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 import style from './BusinessPageImageGallery.module.scss';
 
 export default ({ defaultMainImage, defaultSubImages }) => {
@@ -10,11 +10,11 @@ export default ({ defaultMainImage, defaultSubImages }) => {
         infinite: true,
         arrows: false,
         speed: 200,
-        afterChange: index => {
+        afterChange: (index) => {
             setMainImage(defaultSubImages[index]);
         },
         slidesToShow: defaultSubImages.length > 4 ? 4 : defaultSubImages.length,
-        autoplay: true
+        autoplay: true,
     };
 
 
