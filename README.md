@@ -1,7 +1,5 @@
 # Wajjbat Project
 
-[Website link](https://relaxed-mcclintock-c009c1.netlify.com/)
-
 ## Local installation
 
 ```

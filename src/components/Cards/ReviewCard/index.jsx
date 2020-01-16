@@ -9,7 +9,6 @@ export default (props) => (
                 <img className={style['profile-image']} src={props.profile_image} alt="" />
                 <span className={style['profile-fullname']}>{props.fullname}</span>
             </div>
-            {console.log(props)}
             <span>{props.dateCreated}</span>
         </div>
         <div className={style['middle-review-card']}>

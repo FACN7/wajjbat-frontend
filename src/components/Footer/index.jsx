@@ -32,9 +32,9 @@ export default function Footer({ lang, filterByType, filterByCuisine }) {
         <div
             className="footer"
             id="footer"
-            // style={{
-            //     bottom: hideFooter ? '-100px' : '0',
-            // }}
+            style={{
+                bottom: hideFooter ? '-100px' : '0',
+            }}
         >
             <div className="filter" onClick={sideBarHandler} role="">
                 <img
@@ -49,7 +49,7 @@ export default function Footer({ lang, filterByType, filterByCuisine }) {
                 className="overlay"
                 onClick={sideBarHandler}
                 style={{
-                    right: showSideBar ? '0px' : '-100%',
+                    right: showSideBar ? '0px' : '-150%',
                 }}
             >
                 <div
