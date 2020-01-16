@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { useHistory } from 'react-router-dom';
 import Select from 'components/Forms/Select';
 import ImageInput from 'components/Forms/ImageInput';
 import InitialGoogleMaps from 'components/InitialGoogleMaps';
@@ -28,6 +29,8 @@ const cuisines = [
 const endPointUrl = process.env.REACT_APP_API_URL;
 
 function AddBusiness({ intl }) {
+    const history = useHistory();
+
     const [mainImg, setMainImg] = useState('');
     const [subImgs, setSubImgs] = useState([]);
     const [userPosition, setUserPosition] = useState({});
@@ -83,7 +86,18 @@ function AddBusiness({ intl }) {
             lng: userPosition.lng,
         };
 
-        await axios.post(`${endPointUrl}/api/new-businesses`, data, { withCredentials: true });
+        try {
+            const result = await axios.post(`${endPointUrl}/api/new-businesses`, data, { withCredentials: true });
+
+            if (result.success) {
+                history.push('/profile-business-list');
+            } else {
+                // handle error
+            }
+        } catch (err) {
+            console.log(err)
+
+        }
 
     // Redirect the user to another page
     };

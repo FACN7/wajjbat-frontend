@@ -21,7 +21,7 @@ export default function BusinessDetails({ businessData, userPosition }) {
         <div>
             <div className={style['upper-details-container']}>
                 <div className={style['business-type']}>
-                    <FormattedMessage id={businessData.business_type} />, <FormattedMessage id={businessData.cuisine} />
+                    <FormattedMessage id={businessData.type} />, <FormattedMessage id={businessData.cuisine} />
                 </div>
 
                 <div className={style['business-rating']}>
