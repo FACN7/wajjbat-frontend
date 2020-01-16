@@ -68,7 +68,7 @@ function BusinessReviews(props) {
                 rating={currentReview.rating}
                 fullname={currentReview.fullname}
                 profile_image={currentReview.profile_image}
-                dateCreated={currentReview.created_at.split('T')[0]}
+                dateCreated={currentReview.dateCreated}
                 review_body={currentReview.review_body}
             />
         ));
